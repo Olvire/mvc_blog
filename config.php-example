@@ -1,0 +1,7 @@
+<?php
+$DATABASE = [
+	"dbname" => "",
+	"host" => "",
+	"user" => "",
+	"password" => ""
+]
