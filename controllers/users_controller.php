@@ -8,7 +8,7 @@ class UsersController {
 			$user = User::login($_POST['username'],$_POST['password']);
 			if ($user) {
 				if ($user->password == $_POST['password']) {
-					$_SESSION['username'] = $_POST['username'];
+					$_SESSION['user'] = $user;
 					echo "<script>window.location.href='/';</script>";
 				} else {
 					$message = "Incorrect password";

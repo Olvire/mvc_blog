@@ -1,8 +1,5 @@
-	<div id="home_wrapper">
+	<div id="home_wrapper" class="content_wrapper">
 	<?php
-	if (!$posts) {
-		echo "<p class='error'>No posts here</p>";
-	} else {
 	foreach ($posts as $post) {
 	?>
 		<div class="post">
@@ -47,6 +44,5 @@
 			<span id="next">
 				<a href="<?php echo "/posts/page/" . ($page_number + 1) ?>">Next</a>
 			</span>
-			<?php } ?>
 		</div>
 </div>

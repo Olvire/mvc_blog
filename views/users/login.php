@@ -1,4 +1,4 @@
-<div id="login_wrapper">
+<div id="login_wrapper" class="content_wrapper">
 	<form method="POST">
 		<input type="text" name="username">
 		<input type="password" name="password">

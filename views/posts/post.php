@@ -1,8 +1,19 @@
-	<div id="post_wrapper">
+	<div id="post_wrapper" class="content_wrapper">
 		<div class="post">
 			<div class="title">
 				<?php echo $post->title; ?>
 			</div>
+			<?php
+				if ($_SESSION['user']) {
+					echo <<<EOT
+					<div id="post_actions">
+						<a href="/posts/edit/$post->id">edit</a>
+						<a href="/posts/delete/$post->id">delete</a>
+					</div>
+
+EOT;
+				}
+			?>
 			<div class="body">
 				<?php echo $post->body; ?>
 			</div>

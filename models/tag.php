@@ -12,6 +12,7 @@ class Tag {
 		while ($tag = pg_fetch_object($q)) {
 			$tags[] = $tag;
 		}
+
 		return $tags;
 	}
 
@@ -24,7 +25,8 @@ class Tag {
 			$post->timestamp = pretty_timestamp($post->timestamp);
 			$post->tags = Post::get_tags($db,$post->id);
 			$posts[] = $post;
-		}		
+		}
+
 		return $posts;
 	}
 

@@ -17,4 +17,6 @@ if (isset($_GET['controller']) && isset($_GET['action'])) {
 
 require_once('views/layout.php');
 
+DB::close();
+
 ?>

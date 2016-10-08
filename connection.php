@@ -18,4 +18,11 @@ class DB {
 		}
 		return self::$instance;
 	}
+
+	public static function close() {
+		if ($db) {
+			echo "CLOSING DB CONNECTION";
+			pg_close($db);
+		}
+	}
 }

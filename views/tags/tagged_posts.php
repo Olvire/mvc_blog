@@ -1,4 +1,4 @@
-<div id="tagged_posts_wrapper">
+<div id="tagged_posts_wrapper" class="content_wrapper">
 <div id="tagged_posts_header">
 	Viewing posts tagged as <span class="tag"><?php echo $tagged_posts[0]->tag; ?></span>
 </div>

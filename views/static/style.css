@@ -2,6 +2,7 @@ body {
 	background-color: #333333;
 	color: #DDD;
 	font-family: 'PT Sans', sans-serif;
+	font-weight: lighter;
 	margin-bottom: 1px;
 	overflow-y:scroll;
 }
@@ -35,14 +36,18 @@ header a {
 	margin: auto;
 }
 
-#home_wrapper, #post_wrapper, #tagged_posts_wrapper, #login_wrapper {
+.content_wrapper {
 	background-color: #444444;
 	flex-grow: 1;
 }
 
+#error_wrapper {
+	text-align: center;
+}
+
 #sidebar {
 	background-color: #444444;
-	min-width: 25%;
+	min-width: 20%;
 	border-left: 15px solid #333333;
 	padding: 10px;
 }
@@ -74,6 +79,7 @@ header a {
 
 .under:hover {
 	text-decoration: underline;
+	
 }
 
 #tagged_posts_header {
@@ -96,7 +102,7 @@ header a {
 	display: block;
 	font-size: 14pt;
 	border-bottom: 1px solid #8EB28E;
-	padding-bottom: 8px;
+	padding-bottom: 10px;
 	margin-bottom: -10px;
 }
 
@@ -118,8 +124,7 @@ header a {
 	margin: 10px auto;
 	display: block;
 	border: none;
-	padding: 5px;
-	font-size: 14pt;
+	padding: 10px;
 	background-color: #333;
 	color: #8EB28E;
 	width: 40%;
@@ -142,17 +147,68 @@ header a {
 	cursor: pointer;
 }
 
-#logged_in_as {
+#logged_in span:not(:nth-child(1)) {
 	display: block;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #8EB28E;
-	margin-bottom: 10px;
+	margin: 15px 0px;
 }
 
-#logged_in_as {
-	display: flex;
+#logged_in span a {
+	background-color: #8EB28E;
+	color: #333;
+	padding: 0px 5px;
+	border-radius: 5px;
 }
 
-#logged_in_as .left {
-	flex-grow: 1;
+textarea {
+	resize: none;
+}
+
+#new_post_wrapper {
+	text-align: center;
+}
+
+#new_post_wrapper input[type="text"], textarea {
+	background-color: #333;
+	border:none;
+	display: block;
+	margin: auto;
+	width: 70%;
+	padding: 10px;
+	color: #CDCDCD;
+	font-family: 'PT Sans', sans-serif;
+}
+
+#new_post_wrapper input[type="text"] {
+	margin-top: 20px;
+}
+
+#new_post_wrapper textarea {
+	height: 400px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#new_post_wrapper input[type="submit"] {
+	padding: 5px;
+	color: #333;
+	background-color: #8EB28E;
+	width: 40%;
+	border: none;
+	margin-bottom: 20px;
+	width:70%;
+}
+
+#new_post_wrapper input[type="submit"]:hover {
+	cursor: pointer;
+}
+
+#post_actions {
+	margin-left: 12px;
+}
+
+#post_actions a {
+	background-color: #8EB28E;
+	color: #333;
+	padding: 0px 5px;
+	border-radius: 5px;
 }
