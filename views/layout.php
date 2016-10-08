@@ -9,9 +9,9 @@
 		<a href='/'>blg</a>
 	</header>
 	<div id="container">
-	<?php require_once('routes.php'); ?>
+	<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/routes.php'); ?>
 	<div id="sidebar">
-		Sidebar
+		<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/views/sidebar.php'); ?>
 	</div>
 	</div>
 </body>

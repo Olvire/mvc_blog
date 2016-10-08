@@ -27,4 +27,17 @@ class Tag {
 		}		
 		return $posts;
 	}
+
+	public static function get_count() {
+		$db = DB::connect();
+		$q = pg_query("SELECT tag, COUNT(*) AS count FROM tagged_posts GROUP BY tag ORDER BY count DESC LIMIT 10");
+		$tags = [];
+		while ($tag = pg_fetch_object($q)) {
+			$tags[] = array(
+				"tag" => $tag->tag,
+				"count" => $tag->count
+			);
+		}
+		return $tags;
+	}
 }

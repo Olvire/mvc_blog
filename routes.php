@@ -13,7 +13,7 @@ function call($controller, $action,$param) {
 }
 
 $controllers = array(
-	'posts' => ['home','view','error','edit'],
+	'posts' => ['home','view','page','error','edit'],
 	'tags' => ['get_posts']
 );
 

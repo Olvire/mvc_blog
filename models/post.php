@@ -16,6 +16,19 @@ class Post {
 		return $posts;
 	}
 
+	public static function get_page($page_number) {
+		$offset = $page_number * 5;
+		$posts = [];
+		$db = DB::connect();
+		$q = pg_query_params($db,'SELECT posts.id,posts.title,posts.body,posts.timestamp,users.username as author FROM posts INNER JOIN users on posts.user_id = users.id ORDER BY posts.id DESC LIMIT 5 OFFSET $1;',array($offset));
+		while ($post = pg_fetch_object($q)) {
+			$post->timestamp = pretty_timestamp($post->timestamp);
+			$post->tags = Post::get_tags($db,$post->id);
+			$posts[] = $post;
+		}
+		return $posts;
+	}
+
 	public static function get($post_id) {
 		$db = DB::connect();
 		$q = pg_query_params($db,"SELECT posts.id,posts.title,posts.body,posts.timestamp,users.username as author FROM posts INNER JOIN users on posts.user_id = users.id WHERE posts.id = $1",array($post_id));

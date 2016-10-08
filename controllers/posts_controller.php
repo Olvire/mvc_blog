@@ -3,7 +3,7 @@ class PostsController {
 	public function home() {
 		require_once('models/post.php');
 
-		$posts = Post::all();
+		$posts = Post::get_page(0);
 
 		require_once('views/posts/home.php');
 	}
@@ -16,6 +16,12 @@ class PostsController {
 		} else {
 			$this::error();
 		}
+	}
+
+	public function page($page_number) {
+		require_once('models/post.php');
+		$posts = Post::get_page($page_number);
+		require_once('views/posts/home.php');
 	}
 
 	public function edit($post_id) {
