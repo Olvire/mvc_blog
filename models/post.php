@@ -4,23 +4,11 @@ require_once('connection.php');
 require_once('utils.php');
 
 class Post {
-	public static function all() {
-		$posts = [];
-		$db = DB::connect();
-		$q = pg_query('SELECT posts.id,posts.title,posts.body,posts.timestamp,users.username as author FROM posts INNER JOIN users on posts.user_id = users.id ORDER BY posts.id DESC;');
-		while ($post = pg_fetch_object($q)) {
-			$post->timestamp = pretty_timestamp($post->timestamp);
-			$post->tags = Post::get_tags($db,$post->id);
-			$posts[] = $post;
-		}
-		return $posts;
-	}
-
 	public static function get_page($page_number) {
 		$offset = $page_number * 5;
 		$posts = [];
 		$db = DB::connect();
-		$q = pg_query_params($db,'SELECT posts.id,posts.title,posts.body,posts.timestamp,users.username as author FROM posts INNER JOIN users on posts.user_id = users.id ORDER BY posts.id DESC LIMIT 5 OFFSET $1;',array($offset));
+		$q = pg_query_params($db,'SELECT posts.id,posts.title,posts.body,posts.timestamp,users.username as author FROM posts INNER JOIN users on posts.user_id = users.id ORDER BY posts.timestamp DESC LIMIT 5 OFFSET $1;',array($offset));
 		while ($post = pg_fetch_object($q)) {
 			$post->timestamp = pretty_timestamp($post->timestamp);
 			$post->tags = Post::get_tags($db,$post->id);

@@ -31,11 +31,22 @@
 			</div>
 			<?php } ?>
 		</div>
-	<?php } 
-		if ($page_number > 0) {
-	?>
-		<a href="posts/page/<?php echo $page_number - 1 ?>">Prev</a>
 	<?php } ?>
-	<a href="posts/page/<?php echo $page_number + 1 ?>">Next</a>
-	<?php } ?>
+		<div id="prevnext">
+			<span id="prev">
+			<?php 
+				if ($page_number > 0) {
+			?>
+			
+				<a href="<?php echo "/posts/page/" . ($page_number - 1) ?>">Prev</a>
+			
+			<?php } else if ($page_number == 0) {?>
+				Prev
+			<?php } ?>
+			</span>
+			<span id="next">
+				<a href="<?php echo "/posts/page/" . ($page_number + 1) ?>">Next</a>
+			</span>
+			<?php } ?>
+		</div>
 </div>

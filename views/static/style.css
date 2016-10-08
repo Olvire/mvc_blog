@@ -82,3 +82,21 @@ header a {
 #tagged_posts_header .tag {
 	color: #8EB28E;
 }
+
+#prevnext {
+	margin: 15px 15px;
+	display: flex;
+}
+
+#prev {
+	flex-grow: 1;
+}
+
+#popular_tags_header {
+	padding: 10px;
+}
+
+#popular_tags_list {
+	list-style: none;
+	margin-left: 0px;
+}
