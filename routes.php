@@ -6,17 +6,24 @@ function call($controller, $action,$param) {
 		case 'posts':
 			$controller = new PostsController();
 			break;
+		case 'tags':
+			$controller = new TagsController();
 	}
 	$controller->{ $action }($param);
 }
-$controllers = array('posts' => ['home','view','error','edit']);
+
+$controllers = array(
+	'posts' => ['home','view','error','edit'],
+	'tags' => ['get_posts']
+);
+
 
 if (array_key_exists($controller,$controllers)) {
 	if (in_array($action, $controllers[$controller])) {
 		call($controller,$action,$param);
 	} else {
-		call('posts','error');
+		call('posts','error',NULL);
 	}
 } else {
-	call('posts','error');
+	call('posts','error',NULL);
 }

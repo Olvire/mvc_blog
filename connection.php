@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+
 class DB {
 	private static $instance = NULL;
 
@@ -8,13 +8,13 @@ class DB {
 	private function __clone() {}
 
 	public static function connect() {
+		require_once('config.php');
+		$host = $DATABASE['host'];
+		$dbname = $DATABASE['dbname'];
+		$user = $DATABASE['user'];
+		$password = $DATABASE['password'];
 		if (!isset(self::$instance)) {
-			self::$instance = pg_connect("
-				host=$DATABASE['host'] 
-				user=$DATABASE['user'] 
-				password=$DATABASE['password'] 
-				dbname=$DATABASE['dbname']
-			");
+			self::$instance = pg_connect("host=$host dbname=$dbname user=$user password=$password");
 		}
 		return self::$instance;
 	}
