@@ -8,13 +8,18 @@ function call($controller, $action,$param) {
 			break;
 		case 'tags':
 			$controller = new TagsController();
+			break;
+		case 'users':
+			$controller = new UsersController();
+			break;
 	}
 	$controller->{ $action }($param);
 }
 
 $controllers = array(
 	'posts' => ['home','view','page','error','edit'],
-	'tags' => ['get_posts']
+	'tags' => ['get_posts'],
+	'users' => ['login','logout']
 );
 
 

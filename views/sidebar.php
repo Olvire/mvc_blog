@@ -1,3 +1,16 @@
+<?php
+	if ($_SESSION['username']) {
+		$username = $_SESSION['username'];
+		echo <<<EOT
+		<div id="logged_in_as">
+			<span class="left">logged in as $username</span>
+			<span class="right"><a class="under" href="/logout">logout</a></span>
+		</div>
+
+EOT;
+	}
+?>
+
 <span id="popular_tags_header">Popular Tags</span>
 <ul id="popular_tags_list">
 <?php

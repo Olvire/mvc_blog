@@ -1,7 +1,9 @@
 body {
 	background-color: #333333;
-	color: #CDCDCD;
-	font-family: sans-serif;
+	color: #DDD;
+	font-family: 'PT Sans', sans-serif;
+	margin-bottom: 1px;
+	overflow-y:scroll;
 }
 
 body a {
@@ -33,7 +35,7 @@ header a {
 	margin: auto;
 }
 
-#home_wrapper, #post_wrapper, #tagged_posts_wrapper {
+#home_wrapper, #post_wrapper, #tagged_posts_wrapper, #login_wrapper {
 	background-color: #444444;
 	flex-grow: 1;
 }
@@ -42,6 +44,7 @@ header a {
 	background-color: #444444;
 	min-width: 25%;
 	border-left: 15px solid #333333;
+	padding: 10px;
 }
 
 .post {
@@ -66,7 +69,6 @@ header a {
 }
 
 .post_tag {
-	margin-right: 5px;
 	color: #8EB28E;
 }
 
@@ -75,12 +77,10 @@ header a {
 }
 
 #tagged_posts_header {
+	background-color: #8EB28E;
+	color: #333;
 	border-bottom: 15px solid #333333;
 	padding: 10px;
-}
-
-#tagged_posts_header .tag {
-	color: #8EB28E;
 }
 
 #prevnext {
@@ -93,10 +93,66 @@ header a {
 }
 
 #popular_tags_header {
-	padding: 10px;
+	display: block;
+	font-size: 14pt;
+	border-bottom: 1px solid #8EB28E;
+	padding-bottom: 8px;
+	margin-bottom: -10px;
 }
 
 #popular_tags_list {
 	list-style: none;
-	margin-left: 0px;
+	padding: 0px;
+}
+
+#popular_tags_list li {
+	margin-bottom: 8px;
+}
+
+#login_wrapper {
+	text-align: center;
+	padding: 50px;
+}
+
+#login_wrapper input[type="text"], input[type="password"] {
+	margin: 10px auto;
+	display: block;
+	border: none;
+	padding: 5px;
+	font-size: 14pt;
+	background-color: #333;
+	color: #8EB28E;
+	width: 40%;
+}
+
+#login_wrapper input[type="text"]:focus, input[type="password"]:focus {
+	outline: 1px solid #8EB28E;
+}
+
+#login_wrapper input[type="submit"] {
+	padding: 5px;
+	font-size: 14pt;
+	color: #333;
+	background-color: #8EB28E;
+	width: 40%;
+	border: none;
+}
+
+#login_wrapper input[type="submit"]:hover {
+	cursor: pointer;
+}
+
+#logged_in_as {
+	display: block;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #8EB28E;
+	margin-bottom: 10px;
+}
+
+#logged_in_as {
+	display: flex;
+}
+
+#logged_in_as .left {
+	flex-grow: 1;
 }
