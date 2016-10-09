@@ -9,7 +9,12 @@
 				</a>
 			</div>
 			<div class="body">
-				<?php echo $post->body; ?>
+				<?php
+					echo substr($post->body,0,500);
+					if (strlen($post->body) > 500) {
+						echo "... <a href='/posts/view/$post->id'>Read more</a>";
+					}
+				?>
 
 			</div>
 			<div class="timestamp">
