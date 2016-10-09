@@ -4,8 +4,8 @@
 		echo <<<EOT
 		<div id="logged_in">
 			<span>logged in as $username</span>
-			<span><a href="/posts/new">new post</a></span>
-			<span><a href="/logout">logout</a></span>
+			<span><a class="linkbutton" href="/posts/new">new post</a></span>
+			<span><a class="linkbutton" href="/logout">logout</a></span>
 		</div>
 
 EOT;

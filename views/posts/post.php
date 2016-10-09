@@ -7,8 +7,8 @@
 				if ($_SESSION['user']) {
 					echo <<<EOT
 					<div id="post_actions">
-						<a href="/posts/edit/$post->id">edit</a>
-						<a href="/posts/delete/$post->id">delete</a>
+						<a class="linkbutton" href="/posts/edit/$post->id">edit</a>
+						<a class="linkbutton" href="#" onclick="confirmDelete($post_id)">delete</a>
 					</div>
 
 EOT;
@@ -32,3 +32,13 @@ EOT;
 			</div>
 		</div>
 	</div>
+
+
+<script>
+	function confirmDelete(post_id) {
+		var ans = confirm("Are you sure?");
+		if (ans) {
+			window.location.href = "/posts/delete/" + post_id;
+		}
+	}
+</script>

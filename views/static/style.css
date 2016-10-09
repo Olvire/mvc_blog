@@ -152,11 +152,15 @@ header a {
 	margin: 15px 0px;
 }
 
-#logged_in span a {
+.linkbutton {
 	background-color: #8EB28E;
 	color: #333;
 	padding: 0px 5px;
 	border-radius: 5px;
+}
+
+.linkbutton:hover {
+	background-color: #759875;
 }
 
 textarea {
@@ -204,11 +208,4 @@ textarea {
 
 #post_actions {
 	margin-left: 12px;
-}
-
-#post_actions a {
-	background-color: #8EB28E;
-	color: #333;
-	padding: 0px 5px;
-	border-radius: 5px;
 }

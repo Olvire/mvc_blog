@@ -38,12 +38,17 @@ class Post {
 	public static function new($title,$body) {
 		$user = $_SESSION['user'];
 		$db = DB::connect();
-		$q = pg_query_params($db,"INSERT INTO posts VALUES (DEFAULT,$1,$2,current_timestamp,$3) RETURNING id",array($title,nl2br($body),$user->id));
+		$q = pg_query_params($db,"INSERT INTO posts VALUES (DEFAULT,$1,$2,current_timestamp,$3) RETURNING id",array($title,nl2br(strip_tags($body)),$user->id));
 		return pg_fetch_object($q);
 	}
 
 	public static function edit($post_id,$title,$body) {
 		$db = DB::connect();
 		$q = pg_query_params($db,"UPDATE posts SET title = $1, body = $2 WHERE id = $3",array($title,nl2br($body),$post_id));
+	}
+
+	public static function delete($post_id) {
+		$db = DB::connect();
+		$q = pg_query_params($db,"DELETE FROM posts WHERE id = $1",array($post_id));
 	}
 }

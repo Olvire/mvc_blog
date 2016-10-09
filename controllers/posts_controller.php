@@ -64,6 +64,14 @@ class PostsController {
 		}
 	}
 
+	public function delete($post_id) {
+		if (isset($_SESSION['user'])) {
+			require_once($_SERVER['DOCUMENT_ROOT'] . '/models/post.php');
+			Post::delete($post_id);
+			echo "<script>window.location.href = '/';</script>";
+		}
+	}
+
 	public function error() {
 		require_once('views/posts/error.php');
 	}
