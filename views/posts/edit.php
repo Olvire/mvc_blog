@@ -6,7 +6,7 @@
 	?>
 	<form method="post">
 		<input type="text" name="title" value="<?php echo $post->title ?>">
-		<textarea name="body"><?php echo $post->body ?></textarea>
+		<textarea name="body"><?php echo str_replace("<br />", "", $post->body) ?></textarea>
 		<input type="submit" value="submit">
 	</form>
 </div>

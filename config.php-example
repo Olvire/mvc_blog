@@ -4,4 +4,4 @@ $DATABASE = [
 	"host" => "",
 	"user" => "",
 	"password" => ""
-]
+];
