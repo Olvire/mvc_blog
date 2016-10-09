@@ -7,7 +7,7 @@ class UsersController {
 		if (!empty($_POST)) {
 			$user = User::login($_POST['username'],$_POST['password']);
 			if ($user) {
-				if ($user->password == $_POST['password']) {
+				if (password_verify($_POST['password'],$user->password)) {
 					$_SESSION['user'] = $user;
 					echo "<script>window.location.href='/';</script>";
 				} else {

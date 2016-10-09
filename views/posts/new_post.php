@@ -7,7 +7,7 @@
 	<form method="post">
 		<input type="text" placeholder="title" name="title">
 		<textarea name="body" placeholder="body"></textarea>
-		<input type="text" placeholder="tags" name="tags">
+		<input type="text" placeholder="tags (comma-separated)" name="tags">
 		<input type="submit" value="submit">
 	</form>
 </div>
