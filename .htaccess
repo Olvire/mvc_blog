@@ -1,0 +1,10 @@
+Options +FollowSymLinks -Indexes
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^posts/(view|page|edit|delete)/([0-9]+)/?$ index.php?controller=posts&action=$1&param=$2
+RewriteRule ^posts/(new)/?$ index.php?controller=posts&action=$1
+RewriteRule ^tags/view/([a-z\+A-Z0-9]+)/?$ index.php?controller=tags&action=get_posts&param=$1
+RewriteRule ^(login|logout)/?$ index.php?controller=users&action=$1

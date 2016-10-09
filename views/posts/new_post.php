@@ -5,8 +5,9 @@
 	}
 	?>
 	<form method="post">
-		<input type="text" name="title">
-		<textarea name="body"></textarea>
+		<input type="text" placeholder="title" name="title">
+		<textarea name="body" placeholder="body"></textarea>
+		<input type="text" placeholder="tags" name="tags">
 		<input type="submit" value="submit">
 	</form>
 </div>

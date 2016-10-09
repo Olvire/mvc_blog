@@ -184,12 +184,11 @@ textarea {
 
 #new_post_wrapper input[type="text"] {
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 #new_post_wrapper textarea {
-	height: 400px;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	height: 350px;
 }
 
 #new_post_wrapper input[type="submit"] {
